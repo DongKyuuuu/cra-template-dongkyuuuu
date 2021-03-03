@@ -1,9 +1,6 @@
 {
   "name": "cra-template-dongkyuuuu",
   "version": "1.0.0",
-  "scripts": {
-    "publish": "npm version patch && npm publish"
-  },
   "keywords": [
     "react",
     "create-react-app",
