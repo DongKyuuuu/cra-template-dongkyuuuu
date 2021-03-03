@@ -14,15 +14,16 @@ jobs:
          with:
            node-version: 12
            registry-url: https://registry.npmjs.org/
+           
+           
+       - name: npm version patch
+         env:
+           NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
+         run: npm version patch && PACKAGE_VERSION=$(grep '"version":' package.json -m1 | cut -d\" -f4) && echo version_$PACKAGE_VERSION
 
        - name: npm publish
          env:
            NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
          run: npm publish 
-         
-       - name: npm version patch
-         env:
-           NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
-         run: npm version patch && PACKAGE_VERSION=$(grep '"version":' package.json -m1 | cut -d\" -f4) && echo $PACKAGE_VERSION is Published
        
 
