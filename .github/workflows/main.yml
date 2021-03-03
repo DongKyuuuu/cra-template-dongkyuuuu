@@ -27,6 +27,9 @@ jobs:
          
 #        - name: commit package version
 #          run: git commit -m "version update" -a
+       
+       - name: pull
+         run: git pull
          
        - name: push change
          uses: ad-m/github-push-action@master
