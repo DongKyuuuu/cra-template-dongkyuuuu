@@ -25,16 +25,9 @@ jobs:
            NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
          run: npm version patch && PACKAGE_VERSION=$(grep '"version":' package.json -m1 | cut -d\" -f4) 
          
-#        - name: commit package version
-#          run: git commit -m "version update" -a
-       
-       - name: pull
-         run: |
-          git pull
-          git commit -a
          
-       - name: push change
-         uses: ad-m/github-push-action@master
+       - name: GitHub release push
+         uses: ad-m/github-push-action@v0.6.0
          with:
             github_token: ${{secrets.GIT_TOKEN}}
             branch: release
