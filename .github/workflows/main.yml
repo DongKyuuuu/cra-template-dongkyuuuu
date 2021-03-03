@@ -15,7 +15,11 @@ jobs:
            node-version: 12
            registry-url: https://registry.npmjs.org/
            
-           
+       - name: Git Config
+         run: |
+           git conifg --local user.email "${{secrets.GIT_EMAIL}}" 
+           git config --local user.name "${{secrets.GIT_USERNAME}}"
+         
        - name: npm version patch
          env:
            NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
