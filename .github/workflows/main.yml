@@ -3,10 +3,10 @@ name: Master
 on:
   workflow_dispatch:
       inputs:
-         logLevel:
-            description: 'Log level'     
+         bump:
+            description: 'patch(x.x.v) minor(x.v.x) major(v.x.x)'     
             required: true
-            default: 'warning'
+            default: 'patch'
   push:
     branches:
       - master
@@ -32,7 +32,8 @@ jobs:
          env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
          with:
-          target-branch: 'release master'
+          target-branch: 'release'
+          default: ${{ github.event.inputs.bump }}
     
              
        - name: npm publish
