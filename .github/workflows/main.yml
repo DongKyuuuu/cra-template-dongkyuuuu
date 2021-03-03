@@ -29,6 +29,7 @@ jobs:
          run: |
             git add package.json
             git commit -m "update package.json"
+            git push
          
        - name: GitHub release push
          uses: ad-m/github-push-action@v0.6.0
