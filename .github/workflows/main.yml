@@ -32,7 +32,7 @@ jobs:
          env:
           GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
          with:
-          target-branch: 'release'
+          target-branch: 'master'
           default: ${{ github.event.inputs.bump }}
     
              
