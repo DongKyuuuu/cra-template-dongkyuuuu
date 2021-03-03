@@ -15,7 +15,11 @@ jobs:
            node-version: 12
            registry-url: https://registry.npmjs.org/
            
-           
+       - name: set git profile
+         run: |
+           git conifg --local user.email "desktop@kakao.com" 
+           git config --local user.name "Dongkyuuuu"
+         
        - name: npm version patch
          env:
            NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
