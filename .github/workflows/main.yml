@@ -29,5 +29,9 @@ jobs:
          env:
            NODE_AUTH_TOKEN: ${{secrets.NPM_PUBLISH_TOKEN}}
          run: npm publish 
+         
+       - name: commit package version
+         run: git commit -m "version update" -a
+
        
 
