@@ -1,1 +1,3 @@
-#cra-template-dongkyuuuu
+# cra-template-dongkyuuuu
+
+typescript base
