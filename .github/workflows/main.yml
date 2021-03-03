@@ -26,7 +26,9 @@ jobs:
          run: npm version patch && PACKAGE_VERSION=$(grep '"version":' package.json -m1 | cut -d\" -f4) 
          
        - name: commit package version
-         run: git commit -m "version update" -a
+         run: | 
+              git add .
+              git commit -m "version update"
          
        - name: push change
          uses: ad-m/github-push-action@master
