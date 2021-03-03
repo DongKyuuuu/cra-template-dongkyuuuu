@@ -1,4 +1,4 @@
-name: Master
+name: Publish NPM
 
 on:
   workflow_dispatch:
