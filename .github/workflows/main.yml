@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
       inputs:
          bump:
-            description: 'patch(x.x.v) minor(x.v.x) major(v.x.x)'     
+            description: 'patch/minor/major'     
             required: true
             default: 'patch'
 #   push:
