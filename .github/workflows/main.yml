@@ -32,6 +32,12 @@ jobs:
          
        - name: commit package version
          run: git commit -m "version update" -a
+         
+       - name: push change
+         uses: ad-m/github-push-action@master
+         with:
+            github_token: ${{secrets.GIT_TOKEN}}
+            branch: release
 
        
 
