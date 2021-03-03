@@ -1,3 +1,3 @@
 # cra-template-dongkyuuuu
 
-typescript base
+TypeScript CRA-template 입니다.
