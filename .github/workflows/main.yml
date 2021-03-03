@@ -1,6 +1,11 @@
 name: Master
 
 on:
+  workflow_dispatch:
+    inputs:
+      newversion:
+        description: 'Semantic Version Bump Type (major minor patch)'
+        required: true
   push:
     branches:
       - master
@@ -22,7 +27,7 @@ jobs:
            git config --local user.name "${{secrets.GIT_USERNAME}}"
          
        - name: npm version patch
-         run: npm version patch
+         run: npm version ${{ github.event.inputs.newversion }}
          
          
        - name: Version PR
