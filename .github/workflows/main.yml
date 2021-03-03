@@ -17,8 +17,8 @@ jobs:
            
        - name: set git profile
          run: |
-           git conifg --local user.email "desktop@kakao.com" 
-           git config --local user.name "Dongkyuuuu"
+           git conifg --local user.email "${{secrets.GIT_EMAIL}}" 
+           git config --local user.name "${{secrets.GIT_USERNAME}}"
          
        - name: npm version patch
          env:
