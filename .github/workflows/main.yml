@@ -2,10 +2,11 @@ name: Master
 
 on:
   workflow_dispatch:
-    inputs:
-      newversion:
-        description: 'Semantic Version Bump Type (major minor patch)'
-        required: true
+      inputs:
+         logLevel:
+            description: 'Log level'     
+            required: true
+            default: 'warning'
   push:
     branches:
       - master
@@ -26,16 +27,13 @@ jobs:
            git config --local user.email "${{secrets.GIT_EMAIL}}" 
            git config --local user.name "${{secrets.GIT_USERNAME}}"
          
-       - name: npm version patch
-         run: npm version ${{ github.event.inputs.newversion }}
-         
-         
-       - name: Version PR
-         uses: repo-sync/pull-request@v2.6
+       - name: 'Automated Version Bump'
+         uses: 'phips28/gh-action-bump-version@master'
+         env:
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
          with:
-            destination_branch: "release"
-            github_token: ${{secrets.GIT_TOKEN}}
-             
+          target-branch: 'release master'
+    
              
        - name: npm publish
          if: ${{job.status}} == success
