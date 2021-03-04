@@ -56,3 +56,4 @@ import "@/Components/App"
 | `axios`                    | ^0.21.1 |
 | `react-app-rewired`        | ^2.1.8  |
 | `react-app-rewire-alias`   | ^1.0.1  |
+| `normalize.css`            | ^8.0.1  |
