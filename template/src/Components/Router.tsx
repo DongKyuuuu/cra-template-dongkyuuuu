@@ -19,7 +19,7 @@ function About() {
   return <h2>About</h2>;
 }
 
-export default function Router() {
+export default function RouterComponent() {
   return (
     <Router>
       <div>
