@@ -1,13 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { createStore } from "redux";
+import store from "@/Store/store";
 import { Provider } from "react-redux";
+import "./Helpers/AxiosInterceptor";
 import "normalize.css";
 
 import App from "@/Components/App";
-import rootReducer from "@/Redux/Redux";
 
-const store = createStore(rootReducer);
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
