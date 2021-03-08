@@ -1,6 +1,6 @@
 const BASE_URL = {
   production: "",
-  devleopment: "",
+  development: "",
   test: "",
 } as const;
 
