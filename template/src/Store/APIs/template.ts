@@ -16,7 +16,7 @@ const initialState: InitialState = {};
 // 액션 이름은 reducer/ACTION_TYPE의 형태로 만들어줍니다.
 export const testThunk = createAsyncThunk("reducer/ACTION_TYPE", async () => {
   try {
-    const response = await axios.get(/* API_URL */);
+    const response = await axios.get(BASE_URL);
     return response;
   } catch (e) {
     throw e;
@@ -27,7 +27,7 @@ export const testThunk = createAsyncThunk("reducer/ACTION_TYPE", async () => {
 export const test2Thunk = createAsyncThunk("reducer/ACTION_TYPE2", () => {
   return new Promise((resolve, reject) => {
     axios
-      .get(/* API_URL */)
+      .get(BASE_URL)
       .then((result: any) => {
         return resolve(result);
       })
@@ -52,5 +52,5 @@ export const testSlice = createSlice({
   },
 });
 
-export const { testing } = slackSlice.actions;
+export const { testing } = testSlice.actions;
 export default testSlice.reducer;

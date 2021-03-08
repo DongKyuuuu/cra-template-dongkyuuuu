@@ -20,5 +20,5 @@ export const testSlice = createSlice({
   },
 });
 
-export const { testing } = slackSlice.actions;
+export const { testing } = testSlice.actions;
 export default testSlice.reducer;
