@@ -1,11 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import store from "@/Store/store";
 import { Provider } from "react-redux";
+
+import Router from "@/Components/Router";
+import store from "@/Store/store";
+
 import "./Helpers/AxiosInterceptor";
 import "normalize.css";
 
-import App from "@/Components/App";
+function App() {
+  return <Router></Router>;
+}
 
 ReactDOM.render(
   <React.StrictMode>
