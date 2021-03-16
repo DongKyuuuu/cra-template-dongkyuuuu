@@ -5,7 +5,6 @@ import { Provider } from "react-redux";
 import App from "@/Components/App";
 import store from "@/Store/store";
 
-import "./Helpers/AxiosInterceptor";
 import "normalize.css";
 
 ReactDOM.render(
