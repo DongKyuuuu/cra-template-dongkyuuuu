@@ -1,6 +1,6 @@
 import React from "react";
-import Router from "@/Components/Router/Router";
-import AxiosInterceptor from "@/Helpers/AxiosInterceptor";
+import Router from "@/components/router";
+import AxiosInterceptor from "@/utills/AxiosInterceptor";
 import { hot } from "react-hot-loader/root";
 
 function App() {

@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
-import BASE_URL from "./BaseURL";
+import BASE_URL from "../BaseURL";
 import axios from "axios";
 
 /*
